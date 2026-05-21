@@ -40,7 +40,7 @@
 - Verified public URL with `agent-browser` session `caravan-public`; page title and route snapshot loaded.
 - Created public GitHub repo under verified Gabriel owner: `https://github.com/gabrielantonyxaviour/caravan-agent-signal-market`.
 - Added git remote `origin` for the public repo.
-- Committed and pushed `main` to GitHub at commit `a21a250`.
+- Committed and pushed `main` to GitHub; latest delivery commit after report update is `e47ceb1`.
 - Attempted `/polish` route through `playwright-cli-sessions`; blocked because `PLAYWRIGHT_CLI_REMOTE=m2worker` could not SSH to `m2worker` (`100.115.214.82:22` timed out). Filed report at `/Users/gabrielantonyxaviour/.playwright-sessions/.reports/2026-05-21T01-26-30-014-caravan-polish-attempted-from-workspace-playwrig.md`.
 - Captured production screenshots with `agent-browser`: `outputs/screenshots/prod-1440-final-wait.png`, `outputs/screenshots/prod-768-final.png`, `outputs/screenshots/prod-375-final.png`, and `outputs/screenshots/prod-1440-live.png`.
 - Interactivity proof: `Run live check` changed the app state to `Live market frame` after scrolling the button into view.
