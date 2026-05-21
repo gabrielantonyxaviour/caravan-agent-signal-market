@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+.next/
+node_modules/
+dist/
+coverage/
+*.log
+outputs/*.png
+outputs/screenshots/*.png
+outputs/*.webm
+outputs/*.mp4
+.vercel
