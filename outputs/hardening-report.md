@@ -12,7 +12,7 @@ Public demo: `https://caravan-agent-signal-market.vercel.app`
 
 Latest production deployment: `dpl_27WhLwXN6k7ENDwmdCaFiQJ63WJg`
 
-Latest pushed source commit: `0795f2c`
+Hardening source/proof commit: `0795f2c`
 
 ## Changes Made
 
@@ -43,7 +43,7 @@ Latest pushed source commit: `0795f2c`
 | `npm audit --omit=dev` | failed with 2 moderate Next/PostCSS advisories; `npm view next version` is still `16.2.6` |
 | `vercel deploy --prod --yes` | passed and aliased production |
 | `curl -I https://caravan-agent-signal-market.vercel.app` | HTTP 200 |
-| `git push origin main` | passed, pushed `0795f2c` |
+| `git push origin main` | passed; hardening source/proof pushed |
 | `git diff --check` | passed |
 
 ## Visual Proof
@@ -68,7 +68,7 @@ The local QA script verified hero, fixture label, signal ledger, proof label, no
 ## Real Integrations Proven
 
 - Public Vercel deployment is live and aliased.
-- GitHub repo exists, is public under `gabrielantonyxaviour/caravan-agent-signal-market`, and includes hardening commit `0795f2c`.
+- GitHub repo exists, is public under `gabrielantonyxaviour/caravan-agent-signal-market`, and includes the hardening source/proof commits.
 - CoinGecko public market data works for the replay and browser live-check path.
 - Solidity registry source compiles to ABI/bytecode.
 - Arc submit path exists in `scripts/replay-demo.ts` and blocks safely without credentials.
