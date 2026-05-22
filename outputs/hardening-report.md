@@ -12,6 +12,8 @@ Public demo: `https://caravan-agent-signal-market.vercel.app`
 
 Latest production deployment: `dpl_27WhLwXN6k7ENDwmdCaFiQJ63WJg`
 
+Latest pushed source commit: `0795f2c`
+
 ## Changes Made
 
 - Updated `.Codex/state/CURRENT_SPEC.md` and `STATE.json` for this hardening pass and `demo-ready` status.
@@ -22,6 +24,7 @@ Latest production deployment: `dpl_27WhLwXN6k7ENDwmdCaFiQJ63WJg`
 - Added `scripts/local-visual-qa.mjs` and `npm run visual:qa` for local fallback screenshots and primary-flow proof.
 - Updated `FEATURE_MATRIX.md`, `INTEGRATION_MATRIX.md`, `TRUTH_AUDIT.md`, `QUALITY_GATE.md`, and `outputs/visual-qa.md`.
 - Deployed the hardened app to Vercel production.
+- Pushed hardening source and proof artifacts to `origin/main`.
 
 ## Checks Run
 
@@ -40,6 +43,7 @@ Latest production deployment: `dpl_27WhLwXN6k7ENDwmdCaFiQJ63WJg`
 | `npm audit --omit=dev` | failed with 2 moderate Next/PostCSS advisories; `npm view next version` is still `16.2.6` |
 | `vercel deploy --prod --yes` | passed and aliased production |
 | `curl -I https://caravan-agent-signal-market.vercel.app` | HTTP 200 |
+| `git push origin main` | passed, pushed `0795f2c` |
 | `git diff --check` | passed |
 
 ## Visual Proof
@@ -64,7 +68,7 @@ The local QA script verified hero, fixture label, signal ledger, proof label, no
 ## Real Integrations Proven
 
 - Public Vercel deployment is live and aliased.
-- GitHub repo exists and is public under `gabrielantonyxaviour/caravan-agent-signal-market`.
+- GitHub repo exists, is public under `gabrielantonyxaviour/caravan-agent-signal-market`, and includes hardening commit `0795f2c`.
 - CoinGecko public market data works for the replay and browser live-check path.
 - Solidity registry source compiles to ABI/bytecode.
 - Arc submit path exists in `scripts/replay-demo.ts` and blocks safely without credentials.
@@ -96,5 +100,4 @@ The local QA script verified hero, fixture label, signal ledger, proof label, no
 4. Run `ARC_TESTNET_RPC_URL=... PRIVATE_KEY=... npm run replay -- --submit` and capture the Arcscan URL.
 5. Set `NEXT_PUBLIC_ARC_TX_HASH` to the real tx hash, rebuild, deploy, and rerun `npm run visual:qa`.
 6. Record a sub-3-minute demo video using the hardened production URL.
-7. Push the hardening edits to the public repo if the submitted source must mirror the deployed app.
-8. Fill the Google Form with repo, live URL, video URL, and final copy; stop before final submit unless Gabriel explicitly approves.
+7. Fill the Google Form with repo, live URL, video URL, and final copy; stop before final submit unless Gabriel explicitly approves.
