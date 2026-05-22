@@ -79,6 +79,19 @@ function SignalLedger({
   run: CaravanRun;
   decisionTone: "red" | "green";
 }) {
+  const paymentLabel =
+    run.sale.paymentStatus === "confirmed"
+      ? "Bravo paid"
+      : run.sale.paymentStatus === "fixture"
+        ? "Fixture ticket"
+        : "Payment-ready";
+  const paymentText =
+    run.sale.paymentStatus === "confirmed"
+      ? `${run.sale.priceUsdc.toFixed(2)} USDC ticket confirmed on Arc`
+      : run.sale.paymentStatus === "fixture"
+        ? `${run.sale.priceUsdc.toFixed(2)} USDC simulated ticket; no chain tx claimed`
+        : `${run.sale.priceUsdc.toFixed(2)} USDC ticket priced; Arc tx not configured`;
+
   return (
     <div className="liquid-glass rounded-[28px] p-4 sm:p-5">
       <div className="mb-4 flex items-center gap-2">
@@ -89,8 +102,8 @@ function SignalLedger({
         <LedgerRow icon={<Radio size={16} />} label="Atlas publishes">
           {run.signal.symbol} signal at ${run.signal.observedPrice.toLocaleString()}
         </LedgerRow>
-        <LedgerRow icon={<BadgeDollarSign size={16} />} label="Bravo buys">
-          {run.sale.priceUsdc.toFixed(2)} USDC signal ticket
+        <LedgerRow icon={<BadgeDollarSign size={16} />} label={paymentLabel}>
+          {paymentText}
         </LedgerRow>
         <LedgerRow icon={<Gauge size={16} />} label="Coda audits">
           {run.decision.grossEdgeBps} bps gross edge vs{" "}

@@ -4,12 +4,13 @@ CARAVAN is a prototype for the Agora Agents Hackathon by Canteen x Circle.
 It demonstrates a narrow agent-to-agent market loop:
 
 1. Atlas sees a public market signal it cannot use.
-2. Bravo pays a tiny USDC-priced ticket for that signal.
+2. Bravo prices a tiny USDC ticket for that signal.
 3. Coda audits spread, slippage, stale decay, and Arc fee.
 4. Bravo executes or refuses; the demo is designed to make refusal the climax.
 
 The project never claims a real Arc transaction unless one is configured. Live
-market data and fixture chain proof are visibly separated in the app.
+market data, payment-ready state, and fixture chain proof are visibly separated
+in the app.
 
 ## Run
 

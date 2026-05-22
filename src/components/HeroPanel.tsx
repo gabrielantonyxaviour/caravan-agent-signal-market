@@ -40,8 +40,9 @@ export function HeroPanel({
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-7 text-white/62 sm:text-lg">
           CARAVAN turns unused market signals into tiny USDC-priced trades on
-          Arc. The buyer agent pays for information, audits the route, and may
-          refuse execution when costs erase the edge.
+          Arc. The buyer agent prices the information, audits the route, and may
+          refuse execution when costs erase the edge. Real payment proof appears
+          only when an Arc transaction hash is configured.
         </p>
       </div>
 

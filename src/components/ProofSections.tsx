@@ -7,15 +7,23 @@ export function ProofSections({ run }: { run: CaravanRun }) {
     ? "confirmed"
     : run.signal.isFixture
       ? "fixture"
-      : "ready";
+      : "unconfigured";
   const rows = useMemo(
     () => [
       ["Chain", `Arc Testnet · chain ${ARC_TESTNET.chainId}`],
       ["USDC", ARC_TESTNET.usdc],
+      [
+        "Payment status",
+        run.sale.paymentStatus === "confirmed"
+          ? "confirmed Arc transaction"
+          : run.sale.paymentStatus === "fixture"
+            ? "fixture ticket; no chain transaction"
+            : "priced ticket; Arc transaction not configured",
+      ],
       ["Trace", run.decision.traceHash],
       ["Replay", "npm run replay"],
     ],
-    [run.decision.traceHash],
+    [run.decision.traceHash, run.sale.paymentStatus],
   );
 
   return (
@@ -38,15 +46,15 @@ export function ProofSections({ run }: { run: CaravanRun }) {
               className={`mono rounded-full px-3 py-2 text-xs uppercase tracking-[0.16em] ${
                 proofState === "confirmed"
                   ? "bg-[rgba(120,255,182,0.14)] text-[var(--green)]"
-                  : proofState === "ready"
+                  : proofState === "unconfigured"
                     ? "bg-[rgba(146,232,255,0.13)] text-[var(--cyan)]"
                     : "bg-[rgba(229,169,90,0.14)] text-[var(--amber)]"
               }`}
             >
               {proofState === "confirmed"
                 ? "confirmed"
-                : proofState === "ready"
-                  ? "live data, tx pending"
+                : proofState === "unconfigured"
+                  ? "live market frame; no Arc tx configured"
                   : "fixture chain proof"}
             </span>
             {run.sale.arcscanUrl ? (

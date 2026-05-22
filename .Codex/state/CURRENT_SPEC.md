@@ -1,13 +1,14 @@
 # Current Spec: CARAVAN Agent-to-Agent Signal Market
 
 ## Goal
-Ship a judge-ready Agora Agents Hackathon prototype for CARAVAN: three autonomous agents buy, sell, and refuse market signals using live public data, with a real Arc/Circle integration path and explicit fixture labeling when credentials or testnet funding are missing.
+Harden the existing Agora Agents Hackathon CARAVAN execution run so every product, repo, deploy, integration, fixture, and visual claim is backed by current evidence or relabeled before the hardening report is written.
 
 ## Decided
 - Build CARAVAN, not AGRA, because the execution prompt names CARAVAN and the council ranked it as the strongest pure agent-to-agent Arc-finality story.
 - Use a Next.js/React product surface with a cinematic, template-borrowed first screen plus an interactive signal room.
 - Official sponsor stack is Canteen x Circle Arc Testnet, USDC gas/settlement, Circle faucet, Arc docs, Circle docs, and the Canteen ARC CLI.
 - Demo state transition: seller agent publishes a live-data signal, buyer agent pays a tiny USDC-priced fee, buyer agent executes or refuses after cost accounting, and the sale/refusal is recorded through a replayable Arc transaction path.
+- Hardening must update `FEATURE_MATRIX.md`, `INTEGRATION_MATRIX.md`, `TRUTH_AUDIT.md`, and `QUALITY_GATE.md` before writing `outputs/hardening-report.md`.
 
 ## Open
 - Arc RPC key, funded testnet wallet, and any Circle dashboard/API credentials may need browser/CLI access attempts before a real transaction can be produced.
@@ -23,5 +24,5 @@ Ship a judge-ready Agora Agents Hackathon prototype for CARAVAN: three autonomou
 ## Done When
 - Required planning docs exist in the execution workspace.
 - App runs locally, passes build/tests/lint where available, and has a replay command.
-- UI has browser evidence and a polish report or an explicit polish blocker.
-- Builder report is written to `outputs/builder-report.md` with repo, submission, API, UI, test, blocker, and next-action status.
+- UI has browser evidence at 375, 768, and 1440 widths, plus a formal polish pass or an explicit M2 blocker.
+- `outputs/hardening-report.md` records changes made, checks run, visual proof, real integrations, fixtures/mocks, blockers, and exact next actions.

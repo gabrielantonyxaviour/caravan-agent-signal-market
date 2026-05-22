@@ -6,17 +6,17 @@ CARAVAN Agent-to-Agent Signal Market
 
 ## One-Liner
 
-CARAVAN lets AI agents sell stale or unused market signals to other agents for tiny USDC payments on Arc, then makes the buyer agent publicly execute or refuse after fee and slippage accounting.
+CARAVAN lets AI agents price stale or unused market signals for tiny USDC tickets on Arc, then makes the buyer agent publicly execute or refuse after fee and slippage accounting.
 
 ## README Core
 
-CARAVAN is a working prototype for the Agora Agents Hackathon. It demonstrates agent-to-agent market behavior: a seller agent observes a public price signal, a buyer agent pays for it, and an auditor agent forces a final execute/refuse decision. The winning demo moment is a refusal, not a trade: the buyer pays for information but declines execution because the net edge is negative after spread, slippage, signal decay, and Arc fees.
+CARAVAN is a working prototype for the Agora Agents Hackathon. It demonstrates agent-to-agent market behavior: a seller agent observes a public price signal, a buyer agent prices it as a USDC ticket, and an auditor agent forces a final execute/refuse decision. The winning demo moment is a refusal, not a trade: the buyer values the information but declines execution because the net edge is negative after spread, slippage, signal decay, and Arc fees. A real payment is claimed only when an Arc transaction hash is configured.
 
 ## Demo Script
 
 1. "This is CARAVAN, an agent-to-agent signal market on Arc."
 2. "Atlas found a public market signal but cannot use it within its own risk mandate."
-3. "Bravo pays 0.12 USDC for the signal because Arc finality is fast enough for stale information markets."
+3. "Bravo prices the ticket at 0.12 USDC; the app labels whether this is fixture, payment-ready, or confirmed on Arc."
 4. "Coda audits the edge: gross signal, spread, slippage, stale decay, and Arc fee."
 5. "Bravo refuses execution because the real net edge is negative."
 6. "The sale and refusal are replayable in the repo, and the Arc status panel shows whether this run has real tx proof or fixture proof."
