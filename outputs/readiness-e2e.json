@@ -1,0 +1,48 @@
+{
+  "targetUrl": "http://localhost:3037",
+  "generatedAt": "2026-05-22T01:54:05.679Z",
+  "coingeckoProof": {
+    "bitcoin": true,
+    "ethereum": true,
+    "solana": true
+  },
+  "flows": {
+    "noWallet": {
+      "walletBlocked": true,
+      "liveMarketReached": true,
+      "actionAudit": {
+        "items": [
+          {
+            "tag": "BUTTON",
+            "text": "Run live check",
+            "href": null,
+            "disabled": false
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Replay deterministic fixture",
+            "href": null,
+            "disabled": false
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Connect wallet",
+            "href": null,
+            "disabled": false
+          }
+        ],
+        "invalid": []
+      }
+    },
+    "injectedWallet": {
+      "connected": true,
+      "account": "0x1111111111111111111111111111111111111111",
+      "chainId": "0x4cef52",
+      "hasSignature": true
+    }
+  },
+  "screenshots": [
+    "/Users/gabrielantonyxaviour/Documents/hackathons/agora-agents-hackathon/execution/2026-05-21T00-46-18Z-caravan-agent-to-agent-signal-market/outputs/readiness-e2e/no-wallet-375.png",
+    "/Users/gabrielantonyxaviour/Documents/hackathons/agora-agents-hackathon/execution/2026-05-21T00-46-18Z-caravan-agent-to-agent-signal-market/outputs/readiness-e2e/wallet-connected-1440.png"
+  ]
+}

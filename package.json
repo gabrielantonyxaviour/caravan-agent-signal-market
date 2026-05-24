@@ -10,7 +10,8 @@
     "replay": "tsx scripts/replay-demo.ts",
     "test": "node --import tsx --test tests/**/*.test.ts",
     "typecheck": "tsc --noEmit",
-    "visual:qa": "node scripts/local-visual-qa.mjs"
+    "visual:qa": "node scripts/local-visual-qa.mjs",
+    "e2e:readiness": "node scripts/e2e-readiness.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

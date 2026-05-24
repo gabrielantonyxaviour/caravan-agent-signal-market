@@ -19,6 +19,9 @@ export function CaravanNav({ proofLabel }: { proofLabel: string }) {
           <a className="transition hover:text-white" href="#room">
             Signal room
           </a>
+          <a className="transition hover:text-white" href="#auth">
+            Wallet auth
+          </a>
           <a className="transition hover:text-white" href="#proof">
             Proof path
           </a>

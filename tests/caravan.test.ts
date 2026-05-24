@@ -6,6 +6,7 @@ import {
   stableHash,
   type MarketPoint,
 } from "../src/lib/caravan";
+import { ARC_CHAIN_ID_HEX, buildSignMessage } from "../src/lib/wallet-auth";
 
 test("fixture replay produces the refusal demo with labeled fixture payment", () => {
   const run = buildCaravanRun(fixtureMarket, undefined, "2026-05-21T00:00:00.000Z");
@@ -58,4 +59,16 @@ test("confirmed run links the supplied Arc transaction hash", () => {
 test("stableHash remains deterministic for report/replay acceptance ids", () => {
   assert.equal(stableHash("caravan"), stableHash("caravan"));
   assert.notEqual(stableHash("caravan"), stableHash("caravan-2"));
+});
+
+test("wallet auth message binds account and Arc Testnet chain", () => {
+  const message = buildSignMessage(
+    "0x1111111111111111111111111111111111111111",
+    "2026-05-22T00:00:00.000Z",
+  );
+
+  assert.equal(ARC_CHAIN_ID_HEX, "0x4cef52");
+  assert.match(message, /Account: 0x1111111111111111111111111111111111111111/);
+  assert.match(message, /Arc chain: 5042002/);
+  assert.match(message, /verify operator intent/);
 });

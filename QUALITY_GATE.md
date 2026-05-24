@@ -2,22 +2,22 @@
 
 Hackathon: Agora Agents Hackathon
 Idea: CARAVAN Agent-to-Agent Signal Market
+Updated: 2026-05-22 07:25 IST
 
-Updated: 2026-05-22 05:26 IST
-
-Final status: demo-ready
+Final status: `auth-blocked`
 
 | Gate | Evidence | Status |
 |---|---|---|
-| Unit/type/build checks | `npm run lint` passed; `npm run typecheck` passed; `npm test` passed 4/4; `npm run build` passed | passed |
-| Replay checks | `npm run replay` returned live market frame and refusal; `npm run replay -- --fixture` returned fixture refusal; `npm run replay -- --submit --fixture` returned blocked on missing env | passed with Arc submit blocked |
-| Integration/API/RPC/contract smoke checks | CoinGecko curl returned BTC/ETH/SOL data; `arc-canteen status` and `arc-canteen rpc eth_chainId` returned not logged in; solc 0.8.30 produced ABI/bin under `/tmp/caravan-contract-check` | passed except Arc/Canteen auth blocked |
-| Public repo/deploy state | GitHub repo is public under `gabrielantonyxaviour`; hardening commit `0795f2c` pushed to `origin/main`; Vercel deploy `dpl_27WhLwXN6k7ENDwmdCaFiQJ63WJg` is ready and aliased to `https://caravan-agent-signal-market.vercel.app`; `curl -I` returned HTTP 200 | passed |
-| Browser proof for primary flow | `npm run visual:qa` clicked `Run live check` on production and reached `Live market frame`; screenshot `outputs/screenshots/hardening-1440-live.png` | passed local fallback |
+| Unit/type/build checks | `npm run lint` passed; `npm run typecheck` passed; `npm test` passed 5/5; `npm run build` passed with routes `/` and `/api/market` | passed |
+| Replay checks | `npm run replay` returned live market frame and refusal; `npm run replay -- --fixture` returned fixture refusal; `env -u ARC_TESTNET_RPC_URL -u PRIVATE_KEY npm run replay -- --submit --fixture` returned blocked on missing env | passed with Arc submit blocked |
+| Readiness E2E | `CARAVAN_E2E_URL=http://localhost:3037 npm run e2e:readiness` passed primary live flow, no-wallet blocked state, injected-provider signed session, CoinGecko proof, and visible action audit | passed |
+| Integration/API/RPC/contract smoke checks | `/api/market` returned BTC/ETH/SOL; `arc-canteen status` and `arc-canteen rpc eth_chainId` returned not logged in; solc 0.8.30 produced ABI/bin under `/tmp/caravan-readiness-contract-check` | passed except Arc/Canteen auth blocked |
+| Public repo/deploy state | GitHub repo is public under `gabrielantonyxaviour/caravan-agent-signal-market`; readiness changes are local and not claimed deployed | repo proven; deploy update not claimed |
+| Browser proof for primary flow | `npm run visual:qa` clicked `Run live check` on local URL and reached `Live market frame`; screenshot `outputs/screenshots/hardening-1440-live.png` | passed local fallback |
 | Local visual QA at 375 / 768 / 1440 | `outputs/screenshots/hardening-375-fixture.png`; `outputs/screenshots/hardening-768-fixture.png`; `outputs/screenshots/hardening-1440-fixture.png`; no horizontal overflow; hero/ledger/proof labels present | local-visual-qa-passed |
-| Formal /polish | `PLAYWRIGHT_CLI_REMOTE=m2worker`; `browser status` no attached Chrome; `browser start` failed SSH preflight timeout to `100.115.214.82:22`; report saved to `/Users/gabrielantonyxaviour/.playwright-sessions/.reports/2026-05-21T23-51-22-283-caravan-formal-polish-attempt-from-hardening-pas.md` | formal-polish-blocked-by-m2 |
-| Hidden mock/fake claim audit | README, execution packet, metadata, hero, ledger, proof panel, `TRUTH_AUDIT.md`, and this gate now separate fixture/payment-ready/confirmed states | passed |
-| Security/dependency audit | `npm audit --omit=dev` reports 2 moderate advisories from Next's bundled PostCSS path; `npm view next version` returned `16.2.6`, matching installed version | residual-risk |
-| Submission readiness | Demo and repo/deploy exist; real Arc tx, demo video URL, and final Google Form approval are missing | blocked for submit-ready |
+| Formal `/polish` | `PLAYWRIGHT_CLI_REMOTE=m2worker`; `browser start` failed SSH preflight timeout to `100.115.214.82:22`; report saved to `/Users/gabrielantonyxaviour/.playwright-sessions/.reports/2026-05-22T01-42-52-047-caravan-readiness-formal-polish-browser-start-fa.md` | formal-polish-blocked-by-m2 |
+| Hidden mock/fake claim audit | UI and docs separate fixture/payment-ready/confirmed/blocked tx states; no Arcscan link without tx hash; no connected wallet without signed session | passed |
+| Security/dependency audit | `npm audit --omit=dev` reports 2 moderate advisories from Next bundled PostCSS; `npm view next version` returned `16.2.6`, matching installed version; force fix would downgrade Next | residual-risk |
+| Submission readiness | Demo can be tested locally; real Arc tx, real wallet proof, Canteen CLI auth, demo video URL, and final Google Form approval are missing | auth-blocked |
 
 Final visual status: local-visual-qa-passed; formal-polish-blocked-by-m2

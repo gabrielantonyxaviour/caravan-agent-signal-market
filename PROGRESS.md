@@ -45,3 +45,19 @@
 - Captured production screenshots with `agent-browser`: `outputs/screenshots/prod-1440-final-wait.png`, `outputs/screenshots/prod-768-final.png`, `outputs/screenshots/prod-375-final.png`, and `outputs/screenshots/prod-1440-live.png`.
 - Interactivity proof: `Run live check` changed the app state to `Live market frame` after scrolling the button into view.
 - Final report pending.
+
+## 2026-05-22T07:33:59+05:30 — Kimi Readiness Inventory
+
+- Ran heavy grunt verification across the full codebase.
+- Read all planning docs, source files, test scripts, and Solidity contract.
+- Re-ran safe read-only / local-only commands: `npm run lint`, `npm run typecheck`, `npm test`, `npm run build`, `npm run replay`, `npm run replay -- --fixture`, blocked submit proof.
+- Verified `outputs/readiness-e2e.json` and `outputs/local-visual-qa-hardening.md` evidence.
+- Confirmed no `.env` or `.env.local` exists; no credentials in repo.
+- Confirmed `sessionStorage` key `caravan.wallet.session.v1` is the only client storage used; no `localStorage`.
+- Confirmed no forms, inputs, or `onSubmit` handlers in product code.
+- Confirmed 3 visible buttons and 4 nav anchors are all working or blocked-with-reason; 0 invalid actions.
+- Confirmed fixture labels (`DEMO FIXTURE`, `Fixture ticket`) are present and honest.
+- Wrote `outputs/kimi-readiness-inventory.md` with exact findings, file references, and blocker summary for Claude/GPT.
+- Updated `AUTH_PLAN.md`, `E2E_TEST_PLAN.md`, `READINESS_GATE.md`, and `PROGRESS.md` with inventory findings.
+- Did not edit product code, did not final-submit, did not mutate external systems, did not invent credentials.
+- Status remains `auth-blocked` pending real wallet proof, Canteen OAuth resolution, Arc RPC/funding, and deploy update.

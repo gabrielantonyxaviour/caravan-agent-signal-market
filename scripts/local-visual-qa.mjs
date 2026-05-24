@@ -135,7 +135,7 @@ async function evaluate(client, expression, awaitPromise = false) {
 async function navigate(client, url) {
   await client.send("Page.navigate", { url });
   await client.send("Page.loadEventFired").catch(() => undefined);
-  await delay(1500);
+  await delay(3200);
 }
 
 async function setViewport(client, viewport) {

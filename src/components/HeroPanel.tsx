@@ -71,7 +71,7 @@ export function HeroPanel({
         </div>
         <div className="flex flex-col justify-end gap-3">
           <button
-            className="group flex items-center justify-between rounded-full bg-white px-5 py-4 text-left font-semibold text-black transition hover:bg-[var(--green)]"
+            className="group flex items-center justify-between rounded-full bg-white px-5 py-4 text-left font-semibold text-black transition hover:bg-[var(--green)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             disabled={isPending}
             onClick={onLive}
             type="button"
@@ -83,7 +83,7 @@ export function HeroPanel({
             />
           </button>
           <button
-            className="liquid-glass flex items-center justify-between rounded-full px-5 py-4 text-left font-semibold text-white"
+            className="liquid-glass flex items-center justify-between rounded-full px-5 py-4 text-left font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             onClick={onReplay}
             type="button"
           >

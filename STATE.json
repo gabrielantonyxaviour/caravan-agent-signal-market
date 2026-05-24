@@ -6,8 +6,8 @@
   "slug": "agora-agents-hackathon",
   "runId": "2026-05-21T00-46-18Z",
   "runDir": "/Users/gabrielantonyxaviour/Documents/hackathons/agora-agents-hackathon/execution/2026-05-21T00-46-18Z-caravan-agent-to-agent-signal-market",
-  "status": "demo-ready",
-  "agent": "gpt-5.5-builder",
+  "status": "auth-blocked",
+  "agent": "gpt-5.5-readiness",
   "modelPolicy": "execution-code-builds-must-use-gpt-5.5-or-claude-opus-4.7-not-kimi",
-  "output": "/Users/gabrielantonyxaviour/Documents/hackathons/agora-agents-hackathon/execution/2026-05-21T00-46-18Z-caravan-agent-to-agent-signal-market/outputs/hardening-report.md"
+  "output": "/Users/gabrielantonyxaviour/Documents/hackathons/agora-agents-hackathon/execution/2026-05-21T00-46-18Z-caravan-agent-to-agent-signal-market/outputs/readiness-report.md"
 }

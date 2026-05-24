@@ -1,7 +1,7 @@
 # Local Visual QA Hardening
 
-Target: https://caravan-agent-signal-market.vercel.app
-Generated: 2026-05-22T00:02:09.370Z
+Target: http://localhost:3037
+Generated: 2026-05-22T01:53:28.370Z
 Status: local-visual-qa-passed
 
 ## Screenshots

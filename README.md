@@ -12,6 +12,14 @@ The project never claims a real Arc transaction unless one is configured. Live
 market data, payment-ready state, and fixture chain proof are visibly separated
 in the app.
 
+## Auth Decision
+
+CARAVAN is a web3-auth product. The browser surface now uses an EIP-1193 wallet
+provider for auth: connect account, verify Arc Testnet chain `5042002`, request
+a signature, and persist only the signed session in `sessionStorage`. If no
+wallet provider, RPC URL, funded key, or transaction hash is available, the app
+shows a blocked state instead of a fake connected wallet or fake Arc payment.
+
 ## Run
 
 ```bash

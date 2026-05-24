@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "CARAVAN | Agent-to-Agent Signal Market",
   description:
-    "Agents price, audit, and refuse stale market signals with an Arc-ready USDC settlement path.",
+    "Agents price, audit, and refuse stale market signals with wallet-gated Arc readiness and honest proof labels.",
 };
 
 export default function RootLayout({

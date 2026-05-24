@@ -1,6 +1,6 @@
 {
-  "targetUrl": "https://caravan-agent-signal-market.vercel.app",
-  "generatedAt": "2026-05-22T00:02:09.370Z",
+  "targetUrl": "http://localhost:3037",
+  "generatedAt": "2026-05-22T01:53:28.370Z",
   "screenshots": [
     "/Users/gabrielantonyxaviour/Documents/hackathons/agora-agents-hackathon/execution/2026-05-21T00-46-18Z-caravan-agent-to-agent-signal-market/outputs/screenshots/hardening-375-fixture.png",
     "/Users/gabrielantonyxaviour/Documents/hackathons/agora-agents-hackathon/execution/2026-05-21T00-46-18Z-caravan-agent-to-agent-signal-market/outputs/screenshots/hardening-768-fixture.png",
